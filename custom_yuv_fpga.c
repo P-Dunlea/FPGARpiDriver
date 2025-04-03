@@ -98,7 +98,7 @@
          v4l2_subdev_get_try_format(sd, fh->state, 0);
      struct v4l2_rect *try_crop;
  
-     *try_img_fmt = sensor->fmt;
+     *try_fmt = sensor->fmt;
  
      /* Initialize try_crop rectangle. */
      try_crop = v4l2_subdev_get_try_crop(sd, fh->state, 0);
