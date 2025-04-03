@@ -197,7 +197,7 @@
  {
      struct sensor *sensor = to_sensor(sd);
      struct v4l2_mbus_framefmt *format;
-     int i;
+     //int i;
  
      if (fmt->pad)
          return -EINVAL;
