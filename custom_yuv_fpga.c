@@ -94,7 +94,7 @@
  static int sensor_open(struct v4l2_subdev *sd, struct v4l2_subdev_fh *fh)
  {
      struct sensor *sensor = to_sensor(sd);
-     struct v4l2_mbus_framefmt *try_img_fmt =
+     struct v4l2_mbus_framefmt *try_fmt =
          v4l2_subdev_get_try_format(sd, fh->state, 0);
      struct v4l2_rect *try_crop;
  
