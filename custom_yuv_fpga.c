@@ -104,8 +104,8 @@
      try_crop = v4l2_subdev_get_try_crop(sd, fh->state, 0);
      try_crop->top = 0;
      try_crop->left = 0;
-     try_crop->width = try_img_fmt->width;
-     try_crop->height = try_img_fmt->height;
+     try_crop->width = try_fmt->width;
+     try_crop->height = try_fmt->height;
      try_fmt->width = DEFAULT_WIDTH;
      try_fmt->height = DEFAULT_HEIGHT;
      try_fmt->code = REAL_MBUS_CODE;
