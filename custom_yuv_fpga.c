@@ -106,8 +106,8 @@
      try_crop->left = 0;
      try_crop->width = try_img_fmt->width;
      try_crop->height = try_img_fmt->height;
-     try_fmt->width = supported_modes[0].width;
-     try_fmt->height = supported_modes[0].height;
+     try_fmt->width = DEFAULT_WIDTH;
+     try_fmt->height = DEFAULT_HEIGHT;
      try_fmt->code = REAL_MBUS_CODE;
      try_fmt->field = V4L2_FIELD_NONE;
 
@@ -148,7 +148,7 @@
  
     if (code->index > 0)
       return -EINVAL;
-     code->code = REAL_MBUS_CODE:
+     code->code = REAL_MBUS_CODE;
  
      return 0;
  }
@@ -334,7 +334,7 @@
  
      return 0;
  
-  rror:
+  error:
      v4l2_ctrl_handler_free(ctrl_hdlr);
      mutex_destroy(&sensor->mutex);
  
