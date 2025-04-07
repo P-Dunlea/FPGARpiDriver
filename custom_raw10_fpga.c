@@ -59,16 +59,16 @@
  
  #define NUM_MBUS_CODES ARRAY_SIZE(mbus_codes)
 */
- u32 REAL_MBUS_CODE = MEDIA_BUS_FMT_UYVY8_1X16;
+ u32 REAL_MBUS_CODE = MEDIA_BUS_FMT_SRGGB10_1X10;
  
  
- #define MIN_WIDTH	1920
- #define MAX_WIDTH	1920
- #define MIN_HEIGHT	1080
- #define MAX_HEIGHT	1080
+ #define MIN_WIDTH	1080
+ #define MAX_WIDTH	1080
+ #define MIN_HEIGHT	720
+ #define MAX_HEIGHT	720
  
- #define DEFAULT_WIDTH	1920
- #define DEFAULT_HEIGHT	1080
+ #define DEFAULT_WIDTH	1080
+ #define DEFAULT_HEIGHT	720
  /* Default format will be the first entry in mbus_codes */
  
  struct sensor {
@@ -466,7 +466,7 @@
  }
  
  static const struct of_device_id sensor_dt_ids[] = {
-     { .compatible = "luna,custom_yuv_fpga" },
+     { .compatible = "luna,custom_raw10_fpga" },
      { /* sentinel */ }
  };
  MODULE_DEVICE_TABLE(of, sensor_dt_ids);
@@ -475,7 +475,7 @@
      .probe = sensor_probe,
      .remove = sensor_remove,
      .driver = {
-         .name = "custom_yuv_fpga",
+         .name = "custom_raw10_fpga",
          .of_match_table	= sensor_dt_ids,
      },
  };
@@ -483,6 +483,6 @@
  module_platform_driver(sensor_driver);
  
  MODULE_AUTHOR("Phillip Dunlea <pdunlea@lunaglasses.nl>");
- MODULE_DESCRIPTION("FPGA CSI-2 yuv video feed driver");
+ MODULE_DESCRIPTION("FPGA CSI-2 raw10 video feed driver");
  MODULE_LICENSE("GPL v2");
  
