@@ -23,7 +23,7 @@
 	};
 
 	fragment@1 {
-		target = <&csi1>;
+		target = <&csi0>;
 		__overlay__ {
 			status = "okay";
 
