@@ -15,7 +15,7 @@
 
 				port {
 					sensor_0: endpoint {
-						remote-endpoint = <&csi1_ep>;
+						remote-endpoint = <&csi0_ep>;
 					};
 				};
 			};
@@ -37,28 +37,28 @@
 	};
 
 	fragment@2 {
-		target = <&csi1_ep>;
+		target = <&csi0_ep>;
 		__overlay__ {
 			data-lanes = <1>;
 		};
 	};
 
 	fragment@3 {
-		target = <&csi1_ep>;
+		target = <&csi0_ep>;
 		__dormant__ {
 			data-lanes = <1 2>;
 		};
 	};
 
 	fragment@4 {
-		target = <&csi1_ep>;
+		target = <&csi0_ep>;
 		__dormant__ {
 			data-lanes = <1 2 3 4>;
 		};
 	};
 
 	fragment@5 {
-		target = <&csi1_ep>;
+		target = <&csi0_ep>;
 		__dormant__ {
 			clock-noncontinuous;
 		};
