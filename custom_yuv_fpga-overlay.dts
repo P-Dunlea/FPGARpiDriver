@@ -31,66 +31,20 @@
 				csi1_ep: endpoint {
 					remote-endpoint = <&sensor_0>;
 					clock-lanes = <0>;
+					data-lanes = <1 2>;
 				};
 			};
 		};
 	};
 
-	fragment@2 {
-		target = <&csi1_ep>;
-		__overlay__ {
-			data-lanes = <1>;
-		};
-	};
-
-	fragment@3 {
-		target = <&csi1_ep>;
-		__dormant__ {
-			data-lanes = <1 2>;
-		};
-	};
-
-	fragment@4 {
-		target = <&csi1_ep>;
-		__dormant__ {
-			data-lanes = <1 2 3 4>;
-		};
-	};
-
-	fragment@5 {
-		target = <&csi1_ep>;
-		__dormant__ {
-			clock-noncontinuous;
-		};
-	};
 
 	fragment@6 {
 		target = <&sensor_0>;
 		__overlay__ {
-			data-lanes = <1>;
-		};
-	};
-
-	fragment@7 {
-		target = <&sensor_0>;
-		__dormant__ {
 			data-lanes = <1 2>;
 		};
 	};
 
-	fragment@8 {
-		target = <&sensor_0>;
-		__dormant__ {
-			data-lanes = <1 2 3 4>;
-		};
-	};
-
-	fragment@9 {
-		target = <&sensor_0>;
-		__dormant__ {
-			clock-noncontinuous;
-		};
-	};
 
 	__overrides__ {
 		2lanes = <0>, "-2+3-6+7";
