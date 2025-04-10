@@ -73,4 +73,4 @@ media-ctl -p
 To display the live feed using ffplay, use the following command:
 
 ```bash
-ffplay -f v4l2 -framerate 60 -video_size 1920x1080 -input_format yuyv422 /dev/video0
+ffplay -f v4l2 -video_size 1920x1080 -input_format yuyv422 /dev/video0
